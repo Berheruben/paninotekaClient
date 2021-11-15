@@ -1,22 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-import { Data } from '@angular/router';
+import { Observable } from 'rxjs';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
-  configUrl = 'assets/config.json';
+  constructor(private http: HttpClient) {}
 
-  
-  constructor(private http: HttpClient) { 
-    
+  getdata() {
+    return this.http.get(`https://paninoteka.herokuapp.com/api/items`);
   }
-  
-}
-export interface data {
-  heroesUrl: string;
-  textfile: string;
-  date: any;
 }
