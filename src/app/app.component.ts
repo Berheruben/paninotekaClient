@@ -25,7 +25,7 @@ export class AppComponent {
       this.messaggioerrore = 'non hai inserito il nome del panino';
       setTimeout(() => {
         this.messaggioerrore='';
-      }, 2000);
+      },50000);
     return;
     }
     
