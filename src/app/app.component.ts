@@ -23,12 +23,13 @@ export class AppComponent {
   addItem(nomePanino: string) {
     if (!nomePanino) {
       this.messaggioerrore = 'non hai inserito il nome del panino';
+      setTimeout(() => {
+        this.messaggioerrore='';
+      }, 2000);
     return;
     }
     
-    this.dataService
-      .addItem(nomePanino)
-      .subscribe((data) => {
+    this.dataService.addItem(nomePanino).subscribe((data) => {
         console.log('aggiunto correttamente');
         this.items = data;
         this.messaggio = 'Panino aggiunto correttamente!';
