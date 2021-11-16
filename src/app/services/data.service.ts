@@ -8,6 +8,6 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   getdata() {
-    return this.http.get(`https://paninoteka.herokuapp.com/api/items`);
+    return this.http.get<any>(`https://paninoteka.herokuapp.com/api/orders`);
   }
 }
