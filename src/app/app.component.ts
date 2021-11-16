@@ -11,6 +11,7 @@ export class AppComponent {
   public items: any;
   public nomePanino: string = '';
   public messaggio: string = '';
+  public messaggioerrore: string = '';
 
   constructor(private dataService: DataService) {
     this.items = [];
@@ -21,7 +22,8 @@ export class AppComponent {
 
   addItem(nomePanino: string) {
     if (!nomePanino) {
-      return;
+      this.messaggioerrore = 'non hai inserito il nome del panino';
+    return;
     }
     
     this.dataService
@@ -30,11 +32,11 @@ export class AppComponent {
         console.log('aggiunto correttamente');
         this.items = data;
         this.messaggio = 'Panino aggiunto correttamente!';
-
+        this.nomePanino = '';
         setTimeout(() => {
           this.messaggio = '';
-          this.nomePanino = '';
-        }, 2000);
+          this.messaggioerrore='';
+        }, 1000);
       });
   }
 }

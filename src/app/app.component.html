@@ -9,8 +9,8 @@
     {{ messaggio }}
   </div>
   
-  <div class="alert alert-danger mt-2" role="alert">
-    Errore
+  <div class="alert alert-danger mt-2" role="alert" *ngIf="messaggioerrore">
+    {{messaggioerrore}}
   </div>
 </div>
 
@@ -28,3 +28,4 @@
 </table>
 
 <!-- <pre>{{ items | json }}</pre> -->
+
