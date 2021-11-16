@@ -15,4 +15,15 @@ export class DataService {
       item,
     });
   }
+
+  getOrders(){
+    return this.http.get(`https://paninoteka.herokuapp.com/api/orders`);
+  }
+
+  addOrders(item: any, userName :any ) {
+    return this.http.post(`https://paninoteka.herokuapp.com/api/orders`, {
+      item,
+      userName
+    });
+  }
 }
