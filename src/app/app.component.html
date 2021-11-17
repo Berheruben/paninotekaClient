@@ -15,7 +15,9 @@
     {{messaggioerrore}}
   </div>
 </div>
-
+<select [(ngModel)]="nomePanino">
+  <option *ngFor="let c of items" [ngValue]="c">{{c.item}}</option>
+</select>
 <table *ngIf="items" >
   <thead>
     <tr>
