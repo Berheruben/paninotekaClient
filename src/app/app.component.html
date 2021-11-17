@@ -1,22 +1,22 @@
-
-
 <!-- -------------------------------------------------------------------------------------------  -->
 <div class="mt-2">
   <h4>Aggiungi un nuovo panino</h4>
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Panino" aria-label="Panino" aria-describedby="basic-addon1" [(ngModel)]="nomePanino">
+    <input type="text" class="form-control" placeholder="Panino" aria-label="Panino" aria-describedby="basic-addon1"
+      [(ngModel)]="nomePanino">
   </div>
-  <button type="button" class="btn btn-primary" (click)="addItem(nomePanino)" [disabled]="nomePanino === ''">Aggiungi panino</button>
+  <button type="button" class="btn btn-primary" (click)="addItem(nomePanino)" [disabled]="nomePanino === ''">Aggiungi
+    panino</button>
   <div class="alert alert-success mt-2" role="alert" *ngIf="messaggio">
     {{ messaggio }}
   </div>
-  
+
   <div class="alert alert-danger mt-2" role="alert" *ngIf="messaggioerrore">
     {{messaggioerrore}}
   </div>
 </div>
 
-<table *ngIf="items" >
+<table *ngIf="items">
   <thead>
     <tr>
       <th>Nome</th>
@@ -35,73 +35,81 @@
 <br>
 
 <h4>ordina un panino</h4>
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="User name" aria-label="Panino" aria-describedby="basic-addon1" [(ngModel)]="userName">
-    <input type="text" class="form-control" placeholder="Sandwich" aria-label="Panino" aria-describedby="basic-addon1" [(ngModel)]="orderSandwich">
-  </div>
-  <button type="button" class="btn btn-primary" (click)="addOrder(userName,orderSandwich)">Aggiungi ordine</button>
-
-  <div class="alert alert-success mt-2" role="alert" *ngIf="messaggio">
-    {{ messaggio }}
-  </div>
+<div class="input-group mb-3">
   
-  <div class="alert alert-danger mt-2" role="alert" *ngIf="messaggioerrore">
-    {{messaggioerrore}}
-  </div>
+  <input type="text" class="form-control" placeholder="User name" aria-label="Panino" aria-describedby="basic-addon1"
+    [(ngModel)]="userName">
 
-  <table *ngIf="orders" >
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>- - - - - - - - - - - - - - - - - - - - - - - - -</th>
-        <th>Panino</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let order of orders">
-        <td>{{ order.userName}}</td>
-        <td>- - - - - - - - - - - - - - - - - - - - - - - - -</td>
-        <td>{{ order.item}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <select class="form-select" [(ngModel)]="orderSandwich" >
+    <option *ngFor="let c of items" [ngValue]="c">{{c.item}}</option>
+  </select>
+
+</div>
+<button [disabled]="(userName === '' || orderSandwich ==='')" type="button" class="btn btn-primary"
+  (click)="addOrder(userName,orderSandwich)">Aggiungi ordine</button>
+
+<div class="alert alert-success mt-2" role="alert" *ngIf="messaggio">
+  {{ messaggio }}
+</div>
+
+<div class="alert alert-danger mt-2" role="alert" *ngIf="messaggioerrore">
+  {{messaggioerrore}}
+</div>
+
+<table *ngIf="orders">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>- - - - - - - - - - - - - - - - - - - - - - - - -</th>
+      <th>Panino</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.userName}}</td>
+      <td>- - - - - - - - - - - - - - - - - - - - - - - - -</td>
+      <td>{{ order.item}}</td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- -------------------------------------------------------------------------------------------  -->
 <h4>trova utente</h4>
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="userName" aria-label="Panino" aria-describedby="basic-addon1" [(ngModel)]="nomePanino">
-  </div>
-  <button type="button" class="btn btn-primary" (click)="find_user_order(nomePanino)">trova utente</button>
-  <div class="alert alert-success mt-2" role="alert" *ngIf="messaggio">
-    {{ messaggio }}
-  </div>
-  
-  <div class="alert alert-danger mt-2" role="alert" *ngIf="messaggioerrore">
-    {{messaggioerrore}}
-  </div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="userName" aria-label="Panino" aria-describedby="basic-addon1"
+    [(ngModel)]="name">
+</div>
+<button [disabled]="name === ''" type="button" class="btn btn-primary" (click)="find_user_order(name)">trova
+  utente</button>
+<div class="alert alert-success mt-2" role="alert" *ngIf="messaggio">
+  {{ messaggio }}
+</div>
 
-  <table *ngIf="user_orders" >
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>- - - - - - - - - - - - - - - - - - - - - - - - -</th>
-        <th>Panino</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let order of user_orders">
-        <td>{{ order.userName}}</td>
-        <td>- - - - - - - - - - - - - - - - - - - - - - - - -</td>
-        <td>{{ order.item}}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="alert alert-danger mt-2" role="alert" *ngIf="messaggioerrore">
+  {{messaggioerrore}}
+</div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  
+<table *ngIf="user_orders">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>- - - - - - - - - - - - - - - - - - - - - - - - -</th>
+      <th>Panino</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of user_orders">
+      <td>{{ order.userName}}</td>
+      <td>- - - - - - - - - - - - - - - - - - - - - - - - -</td>
+      <td>{{ order.item}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <!-- <pre>{{ items | json }}</pre> -->
-

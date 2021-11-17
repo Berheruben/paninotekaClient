@@ -15,11 +15,11 @@ export class AppComponent {
   public nomePanino: string = '';
   public orderSandwich: string = '';
   public userName: string = '';
+  public name: string = '';
   public messaggio: string = '';
   public messaggioerrore: string = '';
   public orders: any;
   public user_orders:any
-
 
   constructor(private dataService: DataService) {
     this.items = [];
@@ -30,12 +30,15 @@ export class AppComponent {
     this.dataService.getOrders().subscribe((data: any) => {
       this.orders = data;
     });
-    
+   
   }
+
+
+
   
 //----------------------------------------------------------------------------------------------------------
 
-  addItem(nomePanino: string) {
+  addItem(nomePanino: String) {
     if (!nomePanino) {
       this.messaggioerrore = 'non hai inserito il nome del panino';
       setTimeout(() => {
@@ -56,16 +59,15 @@ export class AppComponent {
 
 //----------------------------------------------------------------------------------------------------------
 
-  addOrder(userName: string, orderSandwich : string) {
-    if (!userName || !orderSandwich) {
+  addOrder(userName: string, orderSandwich : any) {
+    orderSandwich=JSON.stringify(orderSandwich.item).replace(/['"]+/g, '');    
+    if (!userName) {
       this.messaggioerrore = 'non hai inserito dati giusti';
       setTimeout(() => {
         this.messaggioerrore='';
       }, 7000);
-
       return
     }
-
     this.dataService.addOrders(orderSandwich,userName).subscribe((data) => {
         this.orders = data;
         this.messaggio = 'Ordine aggiunto correttamente!';
@@ -93,5 +95,5 @@ export class AppComponent {
       this.user_orders= data;
     })
   }
-//----------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
 }
