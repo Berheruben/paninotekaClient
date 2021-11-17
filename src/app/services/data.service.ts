@@ -26,4 +26,8 @@ export class DataService {
       userName
     });
   }
+  getUser(name : String){
+    return this.http.get(`https://paninoteka.herokuapp.com/api/orders/`+name);
+  }
+
 }
