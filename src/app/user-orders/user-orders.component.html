@@ -1,0 +1,24 @@
+<h4>trova utente</h4>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="userName" aria-label="Panino" aria-describedby="basic-addon1"
+    [(ngModel)]="name">
+</div>
+<button [disabled]="name === ''" type="button" class="btn btn-primary" (click)="find_user_order(name)">trova
+  utente</button>
+
+  <table *ngIf="user_orders">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>- - - - - - - - - - - - - - - - - - - - - - - - -</th>
+        <th>Panino</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of user_orders">
+        <td>{{ order.userName}}</td>
+        <td>- - - - - - - - - - - - - - - - - - - - - - - - -</td>
+        <td>{{ order.item}}</td>
+      </tr>
+    </tbody>
+  </table>

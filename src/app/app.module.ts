@@ -9,12 +9,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataService } from './services/data.service';
 import { UserComponent } from './user/user.component';
+import { AddPaneComponent } from './add-pane/add-pane.component';
+import { UserOrdersComponent } from './user-orders/user-orders.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    AddPaneComponent,
+    UserOrdersComponent
   ],
   imports: [
     BrowserModule,

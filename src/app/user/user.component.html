@@ -1,4 +1,32 @@
 
+<h4>ordina un panino</h4>
+<div class="input-group mb-3">  
+  <input type="text" class="form-control" placeholder="User name" aria-label="Panino" aria-describedby="basic-addon1"
+    [(ngModel)]="userName">
+  <select class="form-select" [(ngModel)]="orderSandwich" >
+    <option *ngFor="let c of items" [ngValue]="c">{{c.item}}</option>
+  </select>
+</div>
 
-<p>user works!</p>
+<!-- -------------------------------------------------------------------------------------------  -->
 
+<button [disabled]="(userName === '' || orderSandwich ==='')" type="button" class="btn btn-primary"
+  (click)="addOrder(userName,orderSandwich)">Aggiungi ordine</button>
+<!-- -------------------------------------------------------------------------------------------  -->
+
+<table *ngIf="orders">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>- - - - - - - - - - - - - - - - - - - - - - - - -</th>
+      <th>Panino</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.userName}}</td>
+      <td>- - - - - - - - - - - - - - - - - - - - - - - - -</td>
+      <td>{{ order.item}}</td>
+    </tr>
+  </tbody>
+</table>

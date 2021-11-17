@@ -1,0 +1,23 @@
+
+<!-- -------------------------------------------------------------------------------------------  -->
+<div class="mt-2">
+    <h4>Aggiungi un nuovo panino</h4>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Panino" aria-label="Panino" aria-describedby="basic-addon1"
+        [(ngModel)]="nomePanino">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="addItem(nomePanino)" [disabled]="nomePanino === ''">Aggiungi panino</button>
+  
+  <!-- -------------------------------------------------------------------------------------------  -->
+  <table *ngIf="items">
+    <thead>
+      <tr>
+        <th>Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let panino of items">
+        <td>{{ panino.item }}</td>
+      </tr>
+    </tbody>
+  </table>
