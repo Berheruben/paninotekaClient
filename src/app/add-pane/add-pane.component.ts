@@ -14,7 +14,6 @@ export class AddPaneComponent  {
   constructor(private dataService: DataService,private toastr: ToastrService) { 
   }
   //----------------------------------------------------------------------------------------------------------
-
   addItem(nomePanino: String) {
     if (!nomePanino) {
       this.toastr.error("non hai inserito dati giusti");

@@ -11,6 +11,9 @@ import { DataService } from './services/data.service';
 import { UserComponent } from './user/user.component';
 import { AddPaneComponent } from './add-pane/add-pane.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
+import { AllOrdersComponent } from './all-orders/all-orders.component';
+import { AllSandwichComponent } from './all-sandwich/all-sandwich.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { UserOrdersComponent } from './user-orders/user-orders.component';
     AppComponent,
     UserComponent,
     AddPaneComponent,
-    UserOrdersComponent
+    UserOrdersComponent,
+    AllOrdersComponent,
+    AllSandwichComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,7 @@ import { UserOrdersComponent } from './user-orders/user-orders.component';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       timeOut: 10000,
-      positionClass: 'toast-top-full-width',
+      positionClass: 'toast-top-right',
       preventDuplicates: true,
     }), // ToastrModule added
     AppRoutingModule,

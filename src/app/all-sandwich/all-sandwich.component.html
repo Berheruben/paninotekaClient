@@ -1,0 +1,12 @@
+<table *ngIf="items">
+    <thead>
+      <tr>
+        <th>TIPOLOGIE DI PANINI </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let panino of items">
+        <td>{{ panino.item }}</td>
+      </tr>
+    </tbody>
+  </table>
