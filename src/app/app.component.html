@@ -7,14 +7,6 @@
     <input type="text" class="form-control" placeholder="Panino" aria-label="Panino" aria-describedby="basic-addon1" [(ngModel)]="nomePanino">
   </div>
   <button type="button" class="btn btn-primary" (click)="addItem(nomePanino)" [disabled]="nomePanino === ''">Aggiungi panino</button>
-  <div class="alert alert-success mt-2" role="alert" *ngIf="messaggio">
-    {{ messaggio }}
-  </div>
-  
-  <div class="alert alert-danger mt-2" role="alert" *ngIf="messaggioerrore">
-    {{messaggioerrore}}
-  </div>
-</div>
 
 <table *ngIf="items" >
   <thead>
@@ -41,14 +33,6 @@
   </div>
   <button type="button" class="btn btn-primary" (click)="addOrder(userName,orderSandwich)">Aggiungi ordine</button>
 
-  <div class="alert alert-success mt-2" role="alert" *ngIf="messaggio">
-    {{ messaggio }}
-  </div>
-  
-  <div class="alert alert-danger mt-2" role="alert" *ngIf="messaggioerrore">
-    {{messaggioerrore}}
-  </div>
-
   <table *ngIf="orders" >
     <thead>
       <tr>
@@ -72,13 +56,7 @@
     <input type="text" class="form-control" placeholder="userName" aria-label="Panino" aria-describedby="basic-addon1" [(ngModel)]="nomePanino">
   </div>
   <button type="button" class="btn btn-primary" (click)="find_user_order(nomePanino)">trova utente</button>
-  <div class="alert alert-success mt-2" role="alert" *ngIf="messaggio">
-    {{ messaggio }}
-  </div>
   
-  <div class="alert alert-danger mt-2" role="alert" *ngIf="messaggioerrore">
-    {{messaggioerrore}}
-  </div>
 
   <table *ngIf="user_orders" >
     <thead>
