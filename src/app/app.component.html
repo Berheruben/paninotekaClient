@@ -6,7 +6,7 @@
   <div class="input-group mb-3">
     <input type="text" class="form-control" placeholder="Panino" aria-label="Panino" aria-describedby="basic-addon1" [(ngModel)]="nomePanino">
   </div>
-  <button type="button" class="btn btn-primary" (click)="addItem(nomePanino)">Aggiungi panino</button>
+  <button type="button" class="btn btn-primary" (click)="addItem(nomePanino)" disabled="disabled">Aggiungi panino</button>
   <div class="alert alert-success mt-2" role="alert" *ngIf="messaggio">
     {{ messaggio }}
   </div>
@@ -15,9 +15,7 @@
     {{messaggioerrore}}
   </div>
 </div>
-<select [(ngModel)]="nomePanino">
-  <option *ngFor="let c of items" [ngValue]="c">{{c.item}}</option>
-</select>
+
 <table *ngIf="items" >
   <thead>
     <tr>
