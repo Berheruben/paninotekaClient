@@ -11,6 +11,9 @@ import { DataService } from './services/data.service';
 //----------------------------------------------------------------------------------------------------------
 
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   public items: any;
   public nomePanino: string = '';
   public orderSandwich: string = '';
@@ -93,5 +96,5 @@ export class AppComponent {
       this.user_orders= data;
     })
   }
-//----------------------------------------------------------------------------------------------------------
 }
+//----------------------------------------------------------------------------------------------------------
