@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataService } from './services/data.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,7 +21,8 @@ export class AppComponent {
   public orders: any;
   public user_orders:any
 
-  constructor(private dataService: DataService) {
+
+  constructor(private dataService: DataService,private toastr: ToastrService) {
     this.items = [];
     this.dataService.getItems().subscribe((data: any) => {
       this.items = data;
@@ -40,6 +41,7 @@ export class AppComponent {
 
   addItem(nomePanino: String) {
     if (!nomePanino) {
+      this.toastr.error("non hai inserito dati giusti");
       this.messaggioerrore = 'non hai inserito il nome del panino';
       setTimeout(() => {
         this.messaggioerrore='';
@@ -49,6 +51,7 @@ export class AppComponent {
     
     this.dataService.addItem(nomePanino).subscribe((data) => {
         this.items = data;
+        this.toastr.success("panino aggiunto correttamente");
         this.messaggio = 'Panino aggiunto correttamente!';
         this.nomePanino = '';
         setTimeout(() => {
@@ -63,6 +66,7 @@ export class AppComponent {
     orderSandwich=JSON.stringify(orderSandwich.item).replace(/['"]+/g, '');    
     if (!userName) {
       this.messaggioerrore = 'non hai inserito dati giusti';
+      this.toastr.error("non hai inserito dati giusti");
       setTimeout(() => {
         this.messaggioerrore='';
       }, 7000);
@@ -70,6 +74,7 @@ export class AppComponent {
     }
     this.dataService.addOrders(orderSandwich,userName).subscribe((data) => {
         this.orders = data;
+        this.toastr.success('Ordine aggiunto correttamente!');
         this.messaggio = 'Ordine aggiunto correttamente!';
         this.userName="";
         this.orderSandwich="";
@@ -83,6 +88,7 @@ export class AppComponent {
 
   find_user_order(userName: string) {
     if (!userName) {
+      this.toastr.error("non hai inserito il nome utente");
       this.messaggioerrore = 'non hai inserito il nome del panino';
       setTimeout(() => {
         this.messaggioerrore='';
