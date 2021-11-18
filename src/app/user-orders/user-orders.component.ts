@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, OperatorFunction } from 'rxjs';
 import { DataService } from './../services/data.service';
 import { ToastrService } from 'ngx-toastr';
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-orders',
   templateUrl: './user-orders.component.html',
   styleUrls: ['./user-orders.component.scss']
 })
-export class UserOrdersComponent {
 
+export class UserOrdersComponent {
+ 
   public user_orders:any
   public name: string = '';
   constructor(private dataService: DataService,private toastr: ToastrService) {
