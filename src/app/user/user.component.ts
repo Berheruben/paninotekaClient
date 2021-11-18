@@ -24,9 +24,10 @@ export class UserComponent{
 
   addOrder(userName: string, orderSandwich : any) {
     orderSandwich=JSON.stringify(orderSandwich.item).replace(/['"]+/g, ''); 
+ 
     console.log(orderSandwich)   
-    if (!userName) {
-      this.toastr.error("non hai inserito dati giusti");
+    if (!/[^a-zA-Z]/.test(userName)==false) {
+      this.toastr.error("non deve contenere numeri e caratteri speciali");
       return
     }
 //----------------------------------------------------------------------------------------------------------
