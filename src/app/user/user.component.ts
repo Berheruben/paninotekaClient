@@ -25,11 +25,11 @@ export class UserComponent{
   addOrder(userName: string, orderSandwich : any) {
     orderSandwich=JSON.stringify(orderSandwich.item).replace(/['"]+/g, ''); 
  
-    console.log(orderSandwich)   
-    if (!/[^a-zA-Z]/.test(userName)==false) {
-      this.toastr.error("non deve contenere numeri e caratteri speciali");
-      return
-    }
+    // console.log(orderSandwich)   
+    // if (!/[^a-zA-Z]/.test(userName)==false) {
+    //   this.toastr.error("non deve contenere numeri e caratteri speciali");
+    //   return
+    // }
 //----------------------------------------------------------------------------------------------------------
     this.dataService.addOrders(orderSandwich,userName).subscribe((data) => {
         this.orders=[];
@@ -37,6 +37,7 @@ export class UserComponent{
         this.toastr.success('Ordine aggiunto correttamente!');
         this.userName="";
         this.orderSandwich="";
-      });     
+      });
+           
   }
 }

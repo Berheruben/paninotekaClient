@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { catchError, throwError } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root',
 })
+
 export class DataService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private toastr: ToastrService) {}
 
   getItems() {
     return this.http.get(`https://paninoteka.herokuapp.com/api/items`);
@@ -13,7 +16,12 @@ export class DataService {
   addItem(item: any) {
     return this.http.post(`https://paninoteka.herokuapp.com/api/items`, {
       item,
-    });
+    }).pipe(
+      catchError((err, caught) => {
+        this.toastr.error(err.error.error);
+        return throwError(err)
+      }),
+    );
   }
 
   getOrders(){
@@ -24,10 +32,21 @@ export class DataService {
     return this.http.post(`https://paninoteka.herokuapp.com/api/orders`, {
       item,
       userName
-    });
+    }).pipe(
+      catchError((err, caught) => {
+        this.toastr.error(err.error.error);
+        return throwError(err)
+      }),
+    );
   }
+  
   getUser(name : String){
-    return this.http.get(`https://paninoteka.herokuapp.com/api/orders/`+name);
+    return this.http.get(`https://paninoteka.herokuapp.com/api/orders/`+name).pipe(
+      catchError((err, caught) => {
+        this.toastr.error(err.error.error);
+        return throwError(err)
+      }),
+    );;
   }
 
 }
