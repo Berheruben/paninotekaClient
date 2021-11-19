@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataService } from './services/data.service';
@@ -14,7 +13,6 @@ import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { AllOrdersComponent } from './all-orders/all-orders.component';
 import { AllSandwichComponent } from './all-sandwich/all-sandwich.component';
 import { HomeComponent } from './home/home.component';
-
 
 @NgModule({
   declarations: [
@@ -36,7 +34,8 @@ import { HomeComponent } from './home/home.component';
       preventDuplicates: true,
     }), // ToastrModule added
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
