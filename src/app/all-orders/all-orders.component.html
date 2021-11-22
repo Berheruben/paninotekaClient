@@ -1,18 +1,23 @@
 
 
-<table *ngIf="orders">
-    <thead>
+
+  <!----------------------------------------------------------------------->
+  
+  <table class="table"*ngIf="orders">
+    <thead class="thead-dark">
       <tr>
-        <th>User</th>
-        <th>- - - - - - - - - - - - - - - - - - - - - - - - -</th>
-        <th>Panino</th>
+        <th scope="col">USERNAME</th>
+        <th scope="col">PANINO</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let order of orders">
-        <td>{{ order.userName}}</td>
-        <td>- - - - - - - - - - - - - - - - - - - - - - - - -</td>
-        <td>{{ order.item}}</td>
-      </tr>
+      
+        <tr *ngFor="let order of orders">
+          <td>{{ order.userName}}</td>
+          <td>{{ order.item}}</td>
+        </tr>
+      
     </tbody>
   </table>
+  
+  
