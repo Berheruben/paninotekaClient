@@ -1,4 +1,15 @@
-<div  class="text-center">
-    <h1 >  BENVENUTI A PANINOTEKA </h1>
-    <h1>oedina un panino</h1>
+<div class="text-center">
+  <h1>BENVENUTI A PANINOTEKA</h1>
+  <h1>ordina un panino senza ricevere un panino</h1>
+  <h1>ecco la lista dei panini che "facciamo":</h1>
 </div>
+
+<ng-container *ngIf="items">
+  <div class="card" *ngFor="let item of items">
+    <div class="card-body">
+      <h5 class="card-title">{{ item.item }}</h5>
+      <p class="card-text">{{ item.descrizione }}</p>
+      <!-- <a class="btn btn-primary">ORDINALO</a> -->
+    </div>
+  </div>
+</ng-container>
