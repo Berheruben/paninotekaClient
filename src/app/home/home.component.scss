@@ -1,5 +1,10 @@
 .card {
-  margin-bottom: 20px;
+  margin: 20px auto;
+  max-width: 50%;
+  border: 3px dashed #fff;
+}
+.backgroundimg, .card{
+  background-color: lightblue;
 }
 h2{
   color: black; 
