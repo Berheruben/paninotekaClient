@@ -10,6 +10,7 @@ import { DataService } from '../services/data.service';
 export class HomeComponent {
 
   public items: any;
+  public texts=["che stai aspettando ?","ordina un panino senza ricevere un panino","ecco la lista dei panini che 'facciamo':"]
 
   constructor(private dataService: DataService,private toastr: ToastrService) {
     this.items = [];
