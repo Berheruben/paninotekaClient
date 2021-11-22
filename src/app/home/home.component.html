@@ -3,20 +3,15 @@
 
 
 <div  class="text-center" >
-    <h1 > BENVENUTI A PANINOTEKA </h1>
-    <br>
-    <div class="container">
+    <h1>-- BENVENUTI A PANINOTEKA --</h1>
+    <ng-container *ngIf="texts">
+      <div  class="container" *ngFor="let text of texts">
         <div class="row">
-            <h2>che stai aspettando ? </h2> <br>
+          <h2>{{text}}</h2>
+      </div>
+      </div>
+    </ng-container>
 
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-          
-            <h2>vuoi ordinare un panino ?</h2>
-        </div>
-    </div>
     <ng-container *ngIf="items">
       <div class="card" *ngFor="let item of items">
         <div class="card-body">
