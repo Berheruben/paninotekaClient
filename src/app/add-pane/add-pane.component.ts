@@ -11,16 +11,18 @@ import { ToastrService } from 'ngx-toastr';
 export class AddPaneComponent  {
   public nomePanino: string = '';
   public items: any;
+  public descrizione: string = ''
   constructor(private dataService: DataService,private toastr: ToastrService) { 
   }
   //----------------------------------------------------------------------------------------------------------
-  addItem(nomePanino: String) {
+  addItem(nomePanino: String, descrizione:String) {
     if (!nomePanino) {
-      this.toastr.error("non hai inserito dati giusti");
+      this.toastr.error("non hai inserito dati giusti primo");
     return;
     }
+    console.log(nomePanino+"   "+descrizione)
 //----------------------------------------------------------------------------------------------------------
-    this.dataService.addItem(nomePanino).subscribe((data) => {
+    this.dataService.addItem(nomePanino,descrizione).subscribe((data) => {
       this.items=[]
       this.items=data
         this.toastr.success("panino aggiunto correttamente");

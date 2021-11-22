@@ -13,9 +13,10 @@ export class DataService {
     return this.http.get(`https://paninoteka.herokuapp.com/api/items`);
   }
 
-  addItem(item: any) {
+  addItem(item: any, descrizione: any) {
     return this.http.post(`https://paninoteka.herokuapp.com/api/items`, {
       item,
+      descrizione,
     }).pipe(
       catchError((err, caught) => {
         this.toastr.error(err.error.error);
