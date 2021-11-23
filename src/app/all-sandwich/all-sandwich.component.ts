@@ -21,6 +21,17 @@ export class AllSandwichComponent  {
     this.dataService.deleteItem(item).subscribe((data) => {
       this.toastr.success("PANINO eliminato corretamente correttamente");
     });
+    setTimeout(() => {
+      window.location.reload();
+    }, 1500);
   }
+  rimuoviTuttiItem(){
+    this.dataService.deleteAllItem().subscribe((data) => {
+      this.toastr.success(" eliminato tutti panini correttamente");
+  });
+  setTimeout(() => {
+    window.location.reload();
+  }, 1500);
+}
 
 }

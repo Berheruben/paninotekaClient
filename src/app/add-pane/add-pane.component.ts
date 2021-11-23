@@ -20,7 +20,6 @@ export class AddPaneComponent  {
       this.toastr.error("non hai inserito dati giusti primo");
     return;
     }
-    console.log(nomePanino+"   "+descrizione)
 //----------------------------------------------------------------------------------------------------------
     this.dataService.addItem(nomePanino,descrizione).subscribe((data) => {
       this.items=[]
