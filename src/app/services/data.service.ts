@@ -50,4 +50,14 @@ export class DataService {
     );;
   }
 
+  deleteOrders(userName:String , item:String){
+    return this.http.delete(`https://paninoteka.herokuapp.com/api/delete/orders/`+userName+`/`+item, { 
+    }).pipe(
+      catchError((err, caught) => {
+        this.toastr.error(err.error.error);
+        return throwError(err)
+      }),
+    );
+  }
+
 }

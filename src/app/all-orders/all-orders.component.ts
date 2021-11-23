@@ -8,8 +8,10 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './all-orders.component.html',
   styleUrls: ['./all-orders.component.scss']
 })
+
 export class AllOrdersComponent  {
   public orders: any;
+  public idN=0
   constructor(private dataService: DataService,private toastr: ToastrService) {
     this.orders = [];
     this.dataService.getOrders().subscribe((data: any) => {
@@ -17,3 +19,25 @@ export class AllOrdersComponent  {
     });
   }
 }
+
+// let deleteRow= (id: any)=>{
+//   for(let i = 0; i < this.orders.length; ++i){
+//       if (this.data[i].id === id) {
+//           this.data.splice(i,1);
+//       }
+//   }
+// }
+
+
+
+// let userName=()=>{
+
+// }
+// let item=()=>{
+
+// }
+
+
+
+
+
