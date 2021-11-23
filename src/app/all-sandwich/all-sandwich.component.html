@@ -1,9 +1,30 @@
-<ng-container *ngIf="items">
+<!-- <ng-container *ngIf="items">
   <div class="card" *ngFor="let item of items">
     <div class="card-body">
       <h5 class="card-title">{{ item.item }}</h5>
       <p class="card-text">{{ item.descrizione }}</p>
-      <!-- <a class="btn btn-primary">ORDINALO</a> -->
-    </div>
+       <a class="btn btn-primary">ORDINALO</a> 
+   </div>
   </div>
-</ng-container>
+</ng-container> --> 
+
+<body>
+  <table class="table"*ngIf="items">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">PANINO</th>
+        <th scope="col">DESCRIZIONE</th>
+        <th scope="col">ELIMINA</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr *ngFor="let item of items">
+          <td>{{ item.item}}</td>
+          <td>{{ item.descrizione}}</td>
+          <td><button> ELIMINA  </button></td>
+        </tr>
+      
+    </tbody>
+  </table> 
+</body>
