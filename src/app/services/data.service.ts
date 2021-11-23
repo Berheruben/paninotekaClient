@@ -70,4 +70,14 @@ export class DataService {
     );
   }
 
+  deleteItem(id :String){
+    return this.http.delete(`https://paninoteka.herokuapp.com/api/delete/item/`+id,{
+    }).pipe(
+      catchError((err, caught) => {
+        this.toastr.error(err.error.error);
+        return throwError(err)
+      }),
+    );
+  }
+
 }

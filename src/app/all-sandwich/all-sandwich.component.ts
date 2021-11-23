@@ -17,4 +17,10 @@ export class AllSandwichComponent  {
       this.items = data;
     });
    }
+  rimuoviItem(item :String){
+    this.dataService.deleteItem(item).subscribe((data) => {
+      this.toastr.success("PANINO eliminato corretamente correttamente");
+    });
+  }
+
 }
