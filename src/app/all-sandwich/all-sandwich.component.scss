@@ -1,10 +1,19 @@
-.card {
+  .card {
     margin: 20px auto;
     max-width: 50%;
-    border: 3px dashed #fff;
+    border: 3px SOLID #fff;
     background-color: lightblue;
     text-align: center;
   }
-  .card{
-    
+  .backgroundimg, .card{
+    background-color: rgba(101, 101, 240, 0.897);
+  
+  }
+  body{
+    background-color: rgba(101, 101, 240, 0.897);
+  }
+  
+  div{
+   // border: 3px dashed #fff;
+    color: aliceblue;
   }
