@@ -16,12 +16,14 @@
         <tr *ngFor="let order of orders">
           <td>{{ order.userName}}</td>
           <td>{{ order.item}}</td>
-          <td><button  id= > <--- Delete  </button></td>
+          <td><button (click)="deleteOrder(order.userName,order.item)"> <--- Delete  </button></td>
         </tr>
       
     </tbody>
   </table> 
 </body>
+
+<div> <div><div><button  (click)="Dorders()" > cancella tutti gli ordini </button> </div> </div> </div>
 
   
   
