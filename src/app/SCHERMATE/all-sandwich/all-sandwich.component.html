@@ -22,11 +22,11 @@
         <tr *ngFor="let item of items">
           <td>{{ item.item}}</td>
           <td>{{ item.descrizione}}</td>
-          <td><button (click)="rimuoviItem(item.item)"> ELIMINA  </button></td>
+          <td><button type="button" class="btn btn-primary" (click)="rimuoviItem(item.item)"> ELIMINA  </button></td>
         </tr>
       
     </tbody>
   </table> 
 </body>
 
-<div><div><button (click)="rimuoviTuttiItem()">elimina tutti item</button></div></div>
+<div><div><button type="button" class="btn btn-primary" (click)="rimuoviTuttiItem()">elimina tutti item</button></div></div>

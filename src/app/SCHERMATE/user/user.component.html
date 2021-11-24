@@ -13,20 +13,3 @@
 <button [disabled]="(userName === '' || orderSandwich ==='')" type="button" class="btn btn-primary"
   (click)="addOrder(userName,orderSandwich)">Aggiungi ordine</button>
 <!-- -------------------------------------------------------------------------------------------  -->
-
-<!-- <table *ngIf="orders">
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>- - - - - - - - - - - - - - - - - - - - - - - - -</th>
-      <th>Panino</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let order of orders">
-      <td>{{ order.userName}}</td>
-      <td>- - - - - - - - - - - - - - - - - - - - - - - - -</td>
-      <td>{{ order.item}}</td>
-    </tr>
-  </tbody>
-</table> -->

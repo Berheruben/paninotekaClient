@@ -90,4 +90,13 @@ export class DataService {
     );
   }
 
+  deleteAllItemOfUser(userName:String){
+    return this.http.delete(`https://paninoteka.herokuapp.com/api/delete/singolUtente/`+userName,{
+    }).pipe(
+      catchError((err, caught) => {
+        this.toastr.error(err.error.error);
+        return throwError(err)
+      }),
+    );
+  }
 }

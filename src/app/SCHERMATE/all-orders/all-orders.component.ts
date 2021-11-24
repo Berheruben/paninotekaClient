@@ -11,7 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 
 export class AllOrdersComponent  {
   public orders: any;
-  public idN=0
+  public name: any;
+
   constructor(private dataService: DataService,private toastr: ToastrService) {
     this.orders = [];
     this.dataService.getOrders().subscribe((data: any) => {
@@ -25,7 +26,7 @@ export class AllOrdersComponent  {
     });
     setTimeout(() => {
       window.location.reload();
-    }, 500);
+    }, 2000);
   }
 
   Dorders(){
@@ -34,9 +35,22 @@ export class AllOrdersComponent  {
     });
     setTimeout(() => {
       window.location.reload();
-    }, 500);
+    }, 2000);
   }
-  
+
+  deleteAllOrderOfSingleUser(userName :String){
+    if (!userName) {
+      this.toastr.error("non hai inserito il nome utente");
+    return;
+    }
+    this.dataService.deleteAllItemOfUser(userName).subscribe((data: any) => {
+      this.toastr.success("tutti ordini eliminati del utente "+ userName);
+    });
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+
+  }
 }
 
 // let deleteRow= (id: any)=>{
