@@ -7,11 +7,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataService } from './services/data.service';
-import { UserComponent } from './user/user.component';
-import { AddPaneComponent } from './add-pane/add-pane.component';
-import { UserOrdersComponent } from './user-orders/user-orders.component';
-import { AllOrdersComponent } from './all-orders/all-orders.component';
-import { AllSandwichComponent } from './all-sandwich/all-sandwich.component';
+import { UserComponent } from './SCHERMATE/user/user.component';
+import { AddPaneComponent } from './SCHERMATE/add-pane/add-pane.component';
+import { UserOrdersComponent } from './SCHERMATE/user-orders/user-orders.component';
+import { AllOrdersComponent } from './SCHERMATE/all-orders/all-orders.component';
+import { AllSandwichComponent } from './SCHERMATE/all-sandwich/all-sandwich.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({

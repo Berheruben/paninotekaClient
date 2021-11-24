@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from './../services/data.service';
+import { DataService } from '../../services/data.service';
 import { ToastrService } from 'ngx-toastr';
 import {Observable, OperatorFunction} from 'rxjs';
 import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';

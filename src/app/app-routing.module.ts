@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AddPaneComponent } from "./add-pane/add-pane.component";
-import { UserComponent } from "./user/user.component";
-import { UserOrdersComponent } from "./user-orders/user-orders.component";
-import { AllOrdersComponent } from "./all-orders/all-orders.component";
-import { AllSandwichComponent } from "./all-sandwich/all-sandwich.component";
+import { AddPaneComponent } from "./SCHERMATE/add-pane/add-pane.component";
+import { UserComponent } from "./SCHERMATE/user/user.component";
+import { UserOrdersComponent } from "./SCHERMATE/user-orders/user-orders.component";
+import { AllOrdersComponent } from "./SCHERMATE/all-orders/all-orders.component";
+import { AllSandwichComponent } from "./SCHERMATE/all-sandwich/all-sandwich.component";
 import { HomeComponent } from "./home/home.component";
 
 const routes: Routes = [
