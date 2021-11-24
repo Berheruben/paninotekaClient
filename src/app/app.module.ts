@@ -13,6 +13,7 @@ import { UserOrdersComponent } from './SCHERMATE/user-orders/user-orders.compone
 import { AllOrdersComponent } from './SCHERMATE/all-orders/all-orders.component';
 import { AllSandwichComponent } from './SCHERMATE/all-sandwich/all-sandwich.component';
 import { HomeComponent } from './home/home.component';
+import { AboutUsComponent } from './SCHERMATE/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { HomeComponent } from './home/home.component';
     UserOrdersComponent,
     AllOrdersComponent,
     AllSandwichComponent,
-    HomeComponent
+    HomeComponent,
+    AboutUsComponent,
+    
   ],
   imports: [
     BrowserModule,

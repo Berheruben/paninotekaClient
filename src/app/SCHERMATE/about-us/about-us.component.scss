@@ -1,0 +1,14 @@
+body{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+p{
+    border-radius: 10px;
+    border: solid blue;
+}
+@media (max-width : 1024px) {
+    body{
+        width: 100%;
+    }
+}

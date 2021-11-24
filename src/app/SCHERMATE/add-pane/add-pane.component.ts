@@ -26,6 +26,7 @@ export class AddPaneComponent  {
       this.items=data
         this.toastr.success("panino aggiunto correttamente");
         this.nomePanino = '';
+        this.descrizione='';
       });
   }
 //----------------------------------------------------------------------------------------------------------
