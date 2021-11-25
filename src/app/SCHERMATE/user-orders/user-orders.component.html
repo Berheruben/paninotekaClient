@@ -1,12 +1,24 @@
-<h4>trova utente</h4>
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="userName" aria-label="Panino" aria-describedby="basic-addon1"
-    [(ngModel)]="name">
-</div>
-<button [disabled]="name === ''" type="button" class="btn btn-primary" (click)="find_user_order(name)">trova
-  utente</button>
 
-  
+  <body>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"><h2>Trova utente</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr >
+            <td><input type="text" class="form-control" placeholder="userName" aria-label="Panino" aria-describedby="basic-addon1"
+              [(ngModel)]="name"></td>
+            <td><button [disabled]="name === ''" type="button" class="btn btn-primary" (click)="find_user_order(name)">trova
+              utente</button></td>
+         
+          </tr>
+        
+      </tbody>
+    </table> 
+  </body>
     <!-- ---------------------------------------------------------------------------  -->
     <!-- let t=array.forEach(function(s)){
         array.filter(s)

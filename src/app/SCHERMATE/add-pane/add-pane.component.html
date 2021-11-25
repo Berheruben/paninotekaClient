@@ -1,27 +1,36 @@
 <!-- -------------------------------------------------------------------------------------------  -->
+
+
 <div class="mt-2">
   <h4>Aggiungi un nuovo panino</h4>
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Panino" aria-label="Panino" aria-describedby="basic-addon1"
-      [(ngModel)]="nomePanino">
-    <input type="text" class="form-control" placeholder="descrizione" aria-label="Panino"
-      aria-describedby="basic-addon1" [(ngModel)]="descrizione">
-    <input type="text" class="form-control" placeholder="prezzo" aria-label="Panino" aria-describedby="basic-addon1"
-      [(ngModel)]="prezzo">
+
   </div>
-  <button type="button" class="btn btn-primary" (click)="addItem(nomePanino,descrizione,prezzo)"
-    [disabled]="(nomePanino === '' || descrizione==='')">Aggiungi panino</button>
+
 
   <!-- -------------------------------------------------------------------------------------------  -->
-  <!-- <table *ngIf="items">
-    <thead>
+  <table class="table">
+    <thead class="thead-dark">
       <tr>
-        <th>Nome</th>
+        <th scope="col">Nome Panino</th>
+        <th scope="col">Descrition</th>
+        <th scope="col">Prezzo</th>
+
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let panino of items">
-        <td>{{ panino.item }}</td>
+
+      <tr>
+        <td><input type="text" class="form-control" placeholder="Panino" aria-label="Panino"
+            aria-describedby="basic-addon1" [(ngModel)]="nomePanino"></td>
+        <td><input type="text" class="form-control" placeholder="descrizione" aria-label="Panino"
+            aria-describedby="basic-addon1" [(ngModel)]="descrizione"></td>
+        <td> <input type="text" class="form-control" placeholder="prezzo" aria-label="Panino"
+            aria-describedby="basic-addon1" [(ngModel)]="prezzo"></td>
       </tr>
+
     </tbody>
-  </table> -->
+  </table>
+
+  <button type="button" class="btn btn-primary" (click)="addItem(nomePanino,descrizione,prezzo)"
+    [disabled]="(nomePanino === '' || descrizione==='')">Aggiungi panino</button>

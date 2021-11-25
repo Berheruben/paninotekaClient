@@ -12,7 +12,8 @@ export class UserComponent{
   public orderSandwich: string = '';
   public userName: string = '';
   public items: any;
-
+  private bufferUsername :any ;
+  private bufferItem :any;
 
   constructor(private dataService: DataService,private toastr: ToastrService) {
     this.items = [];
@@ -23,7 +24,10 @@ export class UserComponent{
 
   addOrder(userName: string, orderSandwich : any) {
     orderSandwich=JSON.stringify(orderSandwich.item).replace(/['"]+/g, ''); 
-    console.log(orderSandwich)
+    this.bufferItem = orderSandwich;
+    this.bufferUsername=userName;
+    this.userName="";
+    this.orderSandwich="";
     let prezzo
     for(let c of this.items){
       if(orderSandwich==c.item){
@@ -39,12 +43,10 @@ export class UserComponent{
     //   return
     // }
 //----------------------------------------------------------------------------------------------------------
-    this.dataService.addOrders(orderSandwich,userName,prezzo).subscribe((data) => {
+    this.dataService.addOrders(this.bufferItem,this.bufferUsername,prezzo).subscribe((data) => {
         this.orders=[];
         this.orders = data;
         this.toastr.success('Ordine aggiunto correttamente!');
-        this.userName="";
-        this.orderSandwich="";
       });
            
   }
