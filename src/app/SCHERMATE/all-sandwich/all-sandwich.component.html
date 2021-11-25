@@ -6,10 +6,10 @@
        <a class="btn btn-primary">ORDINALO</a> 
    </div>
   </div>
-</ng-container> --> 
+</ng-container> -->
 
 <body>
-  <table class="table"*ngIf="items">
+  <table class="table" *ngIf="items">
     <thead class="thead-dark">
       <tr>
         <th scope="col">PANINO</th>
@@ -19,16 +19,32 @@
       </tr>
     </thead>
     <tbody>
-      
-        <tr *ngFor="let item of items">
-          <td>{{ item.item}}</td>
-          <td>{{ item.descrizione}}</td>
-          <td>{{ item.prezzo}}</td>
-          <td><button type="button" class="btn btn-primary" (click)="rimuoviItem(item.item)"> ELIMINA  </button></td>
-        </tr>
-      
+      <tr *ngFor="let item of items">
+        <td>{{ item.item }}</td>
+        <td>{{ item.descrizione }}</td>
+        <td>{{ item.prezzo }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="rimuoviItem(item.item)"
+          >
+            ELIMINA
+          </button>
+        </td>
+      </tr>
     </tbody>
-  </table> 
+  </table>
+  <div>
+    <div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="rimuoviTuttiItem()"
+      >
+        elimina tutti item
+      </button>
+    </div>
+  </div>
+  <br>
 </body>
-
-<div><div><button type="button" class="btn btn-primary" (click)="rimuoviTuttiItem()">elimina tutti item</button></div></div>

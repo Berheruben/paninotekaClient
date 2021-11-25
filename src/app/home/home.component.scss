@@ -9,13 +9,20 @@
 
 }
 
+@media (max-width : 1024px) {
+  .card {
+    margin: 20px auto;
+    max-width: 90%;
+    border: 3px SOLID #fff;
+  }
+}
 div{
  // border: 3px dashed #fff;
   color: aliceblue;
 }
 
 h2{
-  color: black; 
+  color: aliceblue; 
   font-family: "arial";
   margin: 10px 0 0 10px;
   white-space: nowrap;

@@ -1,15 +1,28 @@
-
-<h4>ordina un panino</h4>
-<div class="input-group mb-3">  
-  <input type="text" class="form-control" placeholder="User name" aria-label="Panino" aria-describedby="basic-addon1"
-    [(ngModel)]="userName">
-  <select class="form-select" [(ngModel)]="orderSandwich" >
-    <option *ngFor="let c of items" [ngValue]="c">{{c.item}}</option>
-  </select>
-</div>
+<body>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"><h4>ordina un panino</h4></th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td><input type="text" class="form-control" placeholder="User name" aria-label="Panino" aria-describedby="basic-addon1"
+            [(ngModel)]="userName"></td>
+          <td><select class="form-select" [(ngModel)]="orderSandwich" >
+            <option *ngFor="let c of items" [ngValue]="c">{{c.item}}</option>
+          </select></td>
+       
+        </tr>
+      
+    </tbody>
+  </table> 
 
 <!-- -------------------------------------------------------------------------------------------  -->
-
+<hr size="8" width="100%" color="red">  
 <button [disabled]="(userName === '' || orderSandwich ==='')" type="button" class="btn btn-primary"
   (click)="addOrder(userName,orderSandwich)">Aggiungi ordine</button>
 <!-- -------------------------------------------------------------------------------------------  -->
+</body>
