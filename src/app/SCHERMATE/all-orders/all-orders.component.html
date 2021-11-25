@@ -8,7 +8,9 @@
       <tr>
         <th scope="col">USERNAME</th>
         <th scope="col">PANINO</th>
+        <th scope="col">PREZZO</th>
         <th scope="col">ELIMINA</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -16,6 +18,7 @@
         <tr *ngFor="let order of orders">
           <td>{{ order.userName}}</td>
           <td>{{ order.item}}</td>
+          <td>{{ order.prezzo}}</td>
           <td><button type="button" class="btn btn-primary" (click)="deleteOrder(order.userName,order.item)"> <--- Delete  </button></td>
         </tr>
       
@@ -30,11 +33,12 @@
 <br>
 </body>
 
-<h2>Trova utente</h2>
+<h2>Cancella tutti ordini di un singolo utente</h2>
 <div class="input-group mb-3">
   <input type="text" class="form-control" placeholder="userName" aria-label="Panino" aria-describedby="basic-addon1"
     [(ngModel)]="name">
 
-<button [disabled]="name === ''" type="button" class="btn btn-primary" (click)="deleteAllOrderOfSingleUser(name)">trova
-  utente</button>
+<button [disabled]="name === ''" type="button" class="btn btn-primary" (click)="deleteAllOrderOfSingleUser(name)"> Cancella tutti ordini di un singolo utente
+
+</button>
 </div>
