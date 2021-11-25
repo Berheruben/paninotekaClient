@@ -18,7 +18,7 @@
         <tr *ngFor="let order of orders">
           <td>{{ order.userName}}</td>
           <td>{{ order.item}}</td>
-          <td>{{ order.prezzo}}</td>
+          <td>{{ order.prezzo}} €</td>
           <td><button type="button" class="btn btn-primary" (click)="deleteOrder(order.userName,order.item)"> <--- Delete  </button></td>
         </tr>
       
@@ -33,7 +33,10 @@
 <br>
 </body>
 
+
 <h2>Cancella tutti ordini di un singolo utente</h2>
+<body>
+
 <div class="input-group mb-3">
   <input type="text" class="form-control" placeholder="userName" aria-label="Panino" aria-describedby="basic-addon1"
     [(ngModel)]="name">
@@ -42,3 +45,5 @@
 
 </button>
 </div>
+
+</body>

@@ -13,10 +13,11 @@ export class DataService {
     return this.http.get(`https://paninoteka.herokuapp.com/api/items`);
   }
 
-  addItem(item: any, descrizione: any) {
+  addItem(item: any, descrizione: any,prezzo: any) {
     return this.http.post(`https://paninoteka.herokuapp.com/api/items`, {
       item,
       descrizione,
+      prezzo,
     }).pipe(
       catchError((err, caught) => {
         this.toastr.error(err.error.error);
@@ -29,10 +30,11 @@ export class DataService {
     return this.http.get(`https://paninoteka.herokuapp.com/api/orders`);
   }
 
-  addOrders(item: any, userName :any ) {
+  addOrders(item: any, userName :any, prezzo :any ) {
     return this.http.post(`https://paninoteka.herokuapp.com/api/orders`, {
       item,
-      userName
+      userName,
+      prezzo
     }).pipe(
       catchError((err, caught) => {
         this.toastr.error(err.error.error);

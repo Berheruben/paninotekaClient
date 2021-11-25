@@ -19,19 +19,27 @@ export class UserComponent{
     this.dataService.getItems().subscribe((data: any) => {
       this.items = data;
     });
-    
    }
 
   addOrder(userName: string, orderSandwich : any) {
     orderSandwich=JSON.stringify(orderSandwich.item).replace(/['"]+/g, ''); 
- 
+    console.log(orderSandwich)
+    let prezzo
+    for(let c of this.items){
+      if(orderSandwich==c.item){
+        prezzo=c.prezzo;
+      }
+    }
+    if(prezzo===null){
+      this.toastr.success('Qualcosa è andata storto');
+    }
     // console.log(orderSandwich)   
     // if (!/[^a-zA-Z]/.test(userName)==false) {
     //   this.toastr.error("non deve contenere numeri e caratteri speciali");
     //   return
     // }
 //----------------------------------------------------------------------------------------------------------
-    this.dataService.addOrders(orderSandwich,userName).subscribe((data) => {
+    this.dataService.addOrders(orderSandwich,userName,prezzo).subscribe((data) => {
         this.orders=[];
         this.orders = data;
         this.toastr.success('Ordine aggiunto correttamente!');
